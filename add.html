@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>labb2-frontend</title>
+  </head>
+  <body>
+    <main>
+    <nav>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="add.html" class="active">Lägg till</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+        <div id="center">
+        <h1>Arbetserfarenheter</h1>
+        <p>Fyll i uppgifterna nedan. Företag och namnet på positionen är obligatoriska att fylla i.</p>
+        <p>Datum är frivilliga att lägga till och beskrivning är frivilligt (du kanske jobbar än, eller inte vill beskriva/vet hur du ska beskriva?)</p>
+        <br>
+        <div id="add-err"></div>
+        <form id="workForm">
+            <label for="company">Företaget</label>
+            <input type="text" id="company" placeholder="Företaget...">
+
+            <label for="jobtitle">Namn på position/din roll</label>
+            <input type="text" id="jobtitle" placeholder="Namn på arbetet...">
+
+            <label for="start_date">Började arbeta:</label>
+            <input type="date" id="start_date">
+
+            <label for="end_date">Slutade arbeta:</label>
+            <input type="date" id="end_date">
+
+            <label for="description">Beskrivning:</label>
+            <input type="text" id="description" placeholder="Beskriv arbetet...">
+            
+            <button type="submit">Spara</button>
+        </form>
+
+        </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
