@@ -48,15 +48,16 @@ async function getWorks(){
         //Om ngt går fel, visa meddelande i html
         data.forEach(work => {
             const li = document.createElement("li");
+            li.classList.add("block");
             
             const start = formatDate(work.start_date);
             const end = formatDate(work.end_date);
 
             //skapa variabler för de olika punkterna, sedan append för att flytta alla in i li
-            const title = document.createElement("strong");
+            const title = document.createElement("h3");
             title.textContent = work.company + " - " + work.jobtitle;
 
-            const dates = document.createElement("p");
+            const dates = document.createElement("h4");
             dates.style.fontStyle="italic"
             dates.textContent = "Från: " + start + " - Till: " + end;
 
@@ -72,6 +73,7 @@ async function getWorks(){
                 deleteWork(work.id);
             })*/
             const delBtn = deleteButton(work.id);
+            delBtn.classList.add("delBtn");
             li.appendChild(delBtn);
             list.appendChild(li);
         })
