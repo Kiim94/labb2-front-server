@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>labb2-frontend</title>
+    <script type="module" crossorigin src="/labb2-front-server/assets/main-oe4qu7C8.js"></script>
+    <link rel="stylesheet" crossorigin href="/labb2-front-server/assets/main-DdCtyP11.css">
+  </head>
+  <body>
+    <main>
+    <nav>
+      <ul>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="add.html">Lägg till</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+    <div id="center">
+    <h1>Om uppgiften</h1>
+    <p>Vad som använts:</p>
+    <ul>
+      <li>Express</li>
+      <li>Nodemon</li>
+      <li>PostgreSQL</li>
+      <li>NodeEnv</li>
+      <li>Postman - för att kontrollera api</li>
+    </ul>
+    <p>Än en gång har det varit svårt: först att få en fungerande server och därefter försöka koppla det till en frontend.</p>
+    <p>Det ska erkännas att det har blivit mycket googlande och håret har blivit tunnare efter att ha kliat sig i huvudet så mycket som denna gång: 
+      personligen önskar jag att guider kunde använda lite mer vardagligt/simpelt språk istället för tekniskt tal då jag har lättare för jämförelser när det
+      gäller sådant som programmering.</p>
+    <p>Men det ska också sägas att det kändes lite, lite lättare än första uppgiften: om så bara att det kändes tryggare att kunna dela upp arbetet.</p>
+    <h2>Vad jag lärt mig:</h2>
+    <p>Jag har lärt mig att frukta error 500!</p>
+    <p>Skämt åsido så har det faktikst känts lite lättare att göra på detta vis än i föregående uppgift: server delen, i alla fall. Jag saknar faktiskt EJS lite grann.</p>
+    <p>Det kändes som att det var mindre som behövdes tryckas in (både bland koderna och i hjärnan), och varje del - PUT, DELETE, GET, POST kändes lite mer överskådliga.</p>
+    <p>Det var lite svårt att få grepp om hur Postman egentligen fungerar. Hade problem med att ladda ner desktop versionen (försökte öppna, stängdes på en gång), så testade
+      ett tillägg i VS Code - fungerade men visade inte särskilt tydligt om/hur/varför det fungerade. Fick ordning på Postman till slut - mycket tacksamt att man kan skriva in 
+      exempel data där vid t.ex. test av PUT och DELETE.
+    </p>
+    <h3>Den verkliga skurken</h3>
+    <p>Egentligen hade jag mest problem med JavaScript i frontend delen. Fick testa mycket nytt där också denna gång och jag fick ofta kolla upp: hur gör jag för att detta ska fungera? Hur har andra gjort?</p>
+    <p>Exempelvis datum fungerade utan problem att få synligt i UI - men det var JavaScript "grund datum" så det var inte särskilt vackert.</p>
+    <p>Hittade att man kunde göra en funktion för att lösa det:</p>
+      <pre><code>
+        function formatDate(dateString) {
+          if (!dateString){
+            return "- - -";
+          }
+          return new Date(dateString).toLocaleDateString("sv-SE");
+        }
+      </code></pre>
+
+    <p>Hittade exempel hur hos bland annat:
+      <ul>
+        <li><a href="https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp">w3school</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString"> MDN</a></li>
+      </ul>
+    <p>Tänkte att jag sparar dem här, ifall jag behöver bra källor i framtiden.</p>
+    
+    
+
+    </div>
+  </main>
+  </body>
+</html>
