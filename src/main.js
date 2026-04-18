@@ -25,7 +25,7 @@ const form = document.getElementById("workForm");
 //annars, returnera datum i svenskt format: ändra själva utseendet till mer "förståeligt" för människor
 function formatDate(dateString) {
     if (!dateString){
-        return "- - -";
+        return " ";
     }
     return new Date(dateString).toLocaleDateString("sv-SE");
 }
