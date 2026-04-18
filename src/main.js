@@ -66,12 +66,12 @@ async function getWorks(){
             li.append(title, dates, describe);
             
             //lägg till radera knapp. Hade denna under tidigare, valde att bryta ut den
-            const delBtn = document.createElement("button");
+            /*const delBtn = document.createElement("button");
             delBtn.textContent = "Radera";
             delBtn.addEventListener("click", () => {
                 deleteWork(work.id);
-            })
-
+            })*/
+            const delBtn = deleteButton(work.id);
             li.appendChild(delBtn);
             list.appendChild(li);
         })
@@ -84,6 +84,15 @@ async function getWorks(){
             list.appendChild(p);
         }
     }
+}
+
+function deleteButton(workID){
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Radera";
+    delBtn.addEventListener("click", () => {
+        deleteWork(workID)
+    })
+    return delBtn;
 }
 
 //if(form) - kontroll av ifall form verkligen existerar
