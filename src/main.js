@@ -81,9 +81,7 @@ async function getWorks(){
         console.error("Fel vid hämtning av arbeten:", err);
         
         if(list){
-            const p = document.createElement("p");
-            p.textContent = "Kunde inte hämta datan!";
-            list.appendChild(p);
+            errorDiv.textContent = "Kunde inte hämta datan!"
         }
     }
 }
@@ -115,24 +113,20 @@ function initiateForm(){
         
         //om antingen copmpany eller jobtitle är tom, avbryt kod här o returnera en varning:
         if(!company || !jobtitle){
-            addErr.innerHTML = "";
-            const p = document.createElement("p");
-            p.textContent= "Kom ihåg att fylla i både arbetsplats och namn på ditt arbete!"
-            p.style.color="crimson";
-            p.style.fontWeight = "bold";
-            addErr.appendChild(p);
+            addErr.textContent = "Kom ihåg att fylla i både arbetsplats och namn på ditt arbete!";
+            addErr.classList.add("show");
             return;
         }
         //om det valda end_date som matchas med nutida datum, är mindre (alltså tidigare) än start_date, avbryt o returnera en varning
         if(end_date && new Date(end_date) < new Date(start_date)){
-            addErr.innerHTML = "";
-            const p = document.createElement("p");
-            p.textContent = "Slutdatum kan inte vara innan start!";
-            p.style.color = "crimson";
-            p.style.fontWeight = "bold";
-            addErr.appendChild(p);
+            addErr.textContent = "Slutdatum kan inte vara innan start!";
+            addErr.classList.add("show");
             return;
         }
+
+        addErr.textContent = "";
+        addErr.classList.remove("show");
+
         const fetchValues = {
             company: company,
             jobtitle: jobtitle,
@@ -169,6 +163,7 @@ async function deleteWork(id){
             errorDiv.textContent = "Kunde inte radera arbetet.";
             return;
         }
+        errorDiv.textContent = "";
         console.log("Raderat!")
         getWorks();
     }catch(err){
