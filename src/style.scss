@@ -4,6 +4,7 @@
     box-shadow: 1px 3px 3px rgba(0,0,0,0.4);
     padding:0.3rem;
     font-weight:bold;
+    font-size:16px;
     border-radius:20px;
     transition: all 0.1s ease;
     max-width:100px;
@@ -90,11 +91,18 @@ form{
     flex-direction:column;
     max-width:500px;
     margin:0 auto;
+    gap:1rem;
+    margin-bottom:1rem;
 }
 input{
     padding:0.5rem;
     font-size:1.1rem;
-    margin-bottom:1rem;
+}
+textarea{
+    @extend input;
+    resize:vertical;
+    min-height:100px;
+    font-family:inherit;
 }
 label{
     font-weight:bold;
