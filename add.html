@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>labb2-frontend</title>
-    <script type="module" crossorigin src="/labb2-front-server/assets/main-BjxqBZbg.js"></script>
-    <link rel="stylesheet" crossorigin href="/labb2-front-server/assets/main-B7gajfPM.css">
+    <script type="module" crossorigin src="/labb2-front-server/assets/main-ANlBVkwh.js"></script>
+    <link rel="stylesheet" crossorigin href="/labb2-front-server/assets/main-MvE6hj5_.css">
   </head>
   <body>
     <main>
@@ -17,12 +17,11 @@
         <li><a href="about.html">About</a></li>
       </ul>
     </nav>
-        <div id="center">
-        <h1>Arbetserfarenheter</h1>
-        <p>Fyll i uppgifterna nedan. Företag och namnet på positionen är obligatoriska att fylla i.</p>
-        <p>Datum är frivilliga att lägga till och beskrivning är frivilligt (du kanske jobbar än, eller inte vill beskriva/vet hur du ska beskriva?)</p>
-        <p>Men försök inte lägga så du slutade arbetet innan du startade!</p>
-        <br>
+      <div id="center">
+        <h1>Lägg till arbete</h1>
+          <p>Fyll i uppgifterna nedan. Företag och namnet på positionen är obligatoriska att fylla i.</p>
+          <p>Datum är frivilliga att lägga till och beskrivning är frivilligt (du kanske jobbar än, eller inte vill beskriva/vet hur du ska beskriva?)</p>
+          <p>Men försök inte lägga så du slutade arbetet innan du startade!</p>
 
         <div id="add-err" class="error-box"></div>
 
@@ -40,12 +39,12 @@
             <input type="date" id="end_date">
 
             <label for="description">Beskrivning:</label>
-            <input type="text" id="description" placeholder="Beskriv arbetet...">
+            <textarea id="description" placeholder="Beskriv arbetet..."></textarea>
 
             <button type="submit" id="addBtn">Spara</button>
         </form>
 
-        </div>
+      </div>
     </main>
     <footer>
       <p>Moa B</p>
