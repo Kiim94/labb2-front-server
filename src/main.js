@@ -2,7 +2,7 @@ import './style.scss'
 
 console.log("Script laddat!");
 
-//url till api-server
+//url till api-server. Ingen / på slutet. Kan bli konstigt
 /*Hade denna vid test lokalt:
 const apiUrl = "http://localhost:3000/api/works";*/
 const apiUrl = "https://labb2-webserver.onrender.com/api/works";
@@ -21,7 +21,7 @@ const form = document.getElementById("workForm");
 
 
 //funktion för att göra "korrekt" datum
-//om inget datum finns valt, returnera - - - 
+//om inget datum finns valt, returnera tomt
 //annars, returnera datum i svenskt format: ändra själva utseendet till mer "förståeligt" för människor
 function formatDate(dateString) {
     if (!dateString){
@@ -66,7 +66,9 @@ async function getWorks(){
 
             li.append(title, dates, describe);
             
-            //lägg till radera knapp. Hade denna under tidigare, valde att bryta ut den
+            //lägg till radera knapp. Hade denna under tidigare, 
+            // valde att bryta ut den.
+            //Behåller detta: ändå ok kod 
             /*const delBtn = document.createElement("button");
             delBtn.textContent = "Radera";
             delBtn.addEventListener("click", () => {
@@ -90,6 +92,8 @@ function deleteButton(workID){
     const delBtn = document.createElement("button");
     delBtn.textContent = "Radera";
     delBtn.addEventListener("click", () => {
+        //lade till console.log för att se att det verkligen fungerar
+        console.log("Detta ID raderas: ", workID);
         deleteWork(workID)
     })
     return delBtn;
